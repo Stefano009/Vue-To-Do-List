@@ -35,7 +35,7 @@ const app = new Vue({
                 check: false
             }
         ],
-        backgrounds: {
+        listBackgrounds: {
             green: 'checked-list',
             red: 'unchecked-list'
         }

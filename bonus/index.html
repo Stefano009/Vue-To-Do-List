@@ -20,8 +20,8 @@
             <input type="text" v-model="newToDo" placeholder="aggiungi una nuova attività" @keyUp.enter="addToDo">
             <button @click="addToDo">Aggiungi</button>
         </div>
-        <ul>
-            <li :class="(check==true) ? backgrounds.green : backgrounds.red" @click="checkButton(index)" v-for="({toDo, check}, index) in toDoList">
+        <ul class="unordered-list" v-if="toDoList != ''">
+            <li :class="(check==true) ? listBackgrounds.green : listBackgrounds.red" @click="checkButton(index)" v-for="({toDo, check}, index) in toDoList">
                 {{toDo}}
                 <span class="btn-style">
                     <i v-if="(check==true)" class="far fa-check-square"></i>
@@ -30,6 +30,7 @@
                 </span>
             </li>
         </ul>
+        <h2 id="add-new" v-else>Aggiungere un nuovo Task nella tua to do list</h2>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/main.js"></script>
